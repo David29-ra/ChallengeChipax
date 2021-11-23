@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.title {
+  font-family: 'Indie Flower', cursive;
+  font-size: 50px;
+  color: rgb(55, 53, 47);
+}
+
+.footer {
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  color: rgb(55, 53, 47);
 }
