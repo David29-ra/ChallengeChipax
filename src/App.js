@@ -6,7 +6,7 @@ import { Results } from './components/body';
 function App() {
   return (
     <>
-      <Header title="Rick and Morty"/>
+      <Header title="Rick and Morty Challenge" name="David Rivas"/>
       <Results />
       <Footer name="David Rivas"/>
     </>

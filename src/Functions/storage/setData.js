@@ -1,8 +1,6 @@
 import { getData } from "../../services/indexdata";
-import { conseqArray } from "./createArray";
 
 export async function setData(source, amount) {
-  const qty = conseqArray(amount)
-  const datas = await getData(source, qty)
+  const datas = await getData(source, amount)
   localStorage.setItem(source + "s", JSON.stringify(datas))
 }
