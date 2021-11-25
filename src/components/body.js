@@ -1,45 +1,35 @@
-import { resultCountLetter } from "../Functions/charCounter/charCount"
-import { resultsLocation } from "../Functions/locations/locations"
-import { setData } from '../Functions/storage/setData';
+import React, { useEffect, useState } from 'react';
+import { main } from '../Functions/main/main';
+import { getData } from '../services/indexdata';
 
-export function Results() {
-  const results = []
+export function Results() {  
+  const initial = performance.now()
 
-  setData("episode", 51) // Save 51 episodes on localStorage
+  const [characters, setCharacters] = useState(JSON.parse(localStorage.getItem("characters")) || []);
+  const [locations, setLocations] = useState(JSON.parse(localStorage.getItem("locations")) || []);
+  const [episodes, setEpisodes] = useState(JSON.parse(localStorage.getItem("episodes")) || []);
 
-  setData("location", 126) // Save 126 locations on localStorage
-  
-  setData("character", 826) // Save 826 characters on localStorage
+  useEffect(() => {
+    const savedata = async () => {
+      const chardata = await getData("character", 826)
+      setCharacters(chardata)
+      const locdata = await getData("location", 126)
+      setLocations(locdata)
+      const epidata = await getData("episode", 51)
+      setEpisodes(epidata) 
+    }
+    savedata()
+  }, [])
 
-  const resultCounter = resultCountLetter()
+  const final = performance.now()
+  const diff = final - initial
 
-  const char_counter = {
-    exercise_name: "Char counter",
-    time: localStorage.getItem("duration_char_counter"),
-    in_time: false,
-    results: resultCounter
-  }
-  char_counter.in_time = char_counter.time < 3000
-
-  results.push(char_counter)
-
-  const resultLocation = resultsLocation()
-
-  const episode_locations = {
-    exercise_name: "Episode locations",
-    time: localStorage.getItem("duration_locations"),
-    in_time: false,
-    results: resultLocation
-  }
-  episode_locations.in_time = episode_locations.time < 3000
-  results.push(episode_locations)
-
-  const myjson = JSON.stringify(results, null, 2)
+  console.log(`Time to load data: ${diff}ms`)
 
   return (
     <>
       <div className="results">
-        <pre>{myjson}</pre>
+        <pre>{main(episodes, locations, characters)}</pre>
       </div>
     </>
   )
