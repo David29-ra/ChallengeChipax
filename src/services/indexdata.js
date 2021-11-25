@@ -7,5 +7,6 @@ export async function getData(endpoint, amount) {
   const data = await Fetch(url + endpoint + `/${qyt}`, {
     headers: { "Content-Type": "application/json" }
   })
+  localStorage.setItem(endpoint + "s", JSON.stringify(data))
   return data
 }

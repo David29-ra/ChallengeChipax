@@ -1,14 +1,13 @@
-export function resultsLocation() {
-  let initial = performance.now()
+import { timeFormat } from "../../helpers/timeformat"
+
+export function resultsLocation(episodes, characters) {
+  const initial = performance.now()
   const result = []
 
-  const episodesArray = JSON.parse(localStorage.getItem("episodes"))
-  const charactersArray = JSON.parse(localStorage.getItem("characters"))
-
-  episodesArray?.forEach(episode => {
+  episodes?.forEach(episode => {
     const obj = {name: episode.name, episode: episode.episode, locations: []}
 
-    const locations = episode.characters.map(character => charactersArray?.filter( char => char.id === parseInt(character.split("/")[5])))
+    const locations = episode.characters.map(character => characters?.filter( char => char.id === parseInt(character.split("/")[5])))
                                         .map(char => char[0].origin.name)
 
     obj.locations = uniqueElements(locations)
@@ -16,10 +15,11 @@ export function resultsLocation() {
     result.push(obj)
   })
 
-  let final = performance.now()
-  let dif = final - initial
+  const final = performance.now()
+  const time = final - initial
+  const inFormat = timeFormat(time)
 
-  localStorage.setItem("duration_locations", JSON.stringify(dif))
+  localStorage.setItem("duration_locations", inFormat)
 
   return result
 }
