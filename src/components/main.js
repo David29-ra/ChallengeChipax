@@ -1,4 +1,4 @@
-import { Results } from "./body";
+import { Results } from "./results";
 import { Footer } from "./footer";
 import { Header } from "./header";
 
@@ -8,7 +8,7 @@ export function Mainpage() {
     <>
       <Header title="Rick and Morty Challenge" name="David Rivas"/>
       <Results />
-      <Footer name="David Rivas"/>
+      <Footer name="Monito Inc."/>
     </>
   )
 }

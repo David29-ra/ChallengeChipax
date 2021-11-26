@@ -8,6 +8,12 @@ beforeEach(() => {
   document.body.append(divroot);
 })
 
+afterEach(() => {
+  ReactDOM.unmountComponentAtNode(divroot);
+  divroot.remove();
+  divroot = null;
+})
+
 test("component Footer render without name prop", () => {
   ReactDOM.render(<Footer />, divroot);
 

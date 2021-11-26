@@ -8,6 +8,12 @@ beforeEach(() => {
   document.body.append(divroot);
 })
 
+afterEach(() => {
+  ReactDOM.unmountComponentAtNode(divroot);
+  divroot.remove();
+  divroot = null;
+})
+
 test("component Header render without name prop and title prop", () => {
   ReactDOM.render(<Header />, divroot);
 
