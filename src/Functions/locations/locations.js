@@ -1,5 +1,3 @@
-import { timeFormat } from "../../helpers/timeformat"
-
 export function resultsLocation(episodes, characters) {
   const initial = performance.now()
   const result = []
@@ -17,9 +15,8 @@ export function resultsLocation(episodes, characters) {
 
   const final = performance.now()
   const time = final - initial
-  const inFormat = timeFormat(time)
 
-  localStorage.setItem("duration_locations", inFormat)
+  localStorage.setItem("duration_locations", time)
 
   return result
 }

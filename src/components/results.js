@@ -3,7 +3,7 @@ import { main } from '../Functions/main/main';
 import { getData } from '../services/indexdata';
 
 export function Results() {  
-  const initial = performance.now()
+  // const initial = performance.now()
 
   const [characters, setCharacters] = useState(JSON.parse(localStorage.getItem("characters")) || []);
   const [locations, setLocations] = useState(JSON.parse(localStorage.getItem("locations")) || []);
@@ -21,10 +21,8 @@ export function Results() {
     savedata()
   }, [])
 
-  const final = performance.now()
-  const diff = final - initial
-
-  console.log(`Time to load data: ${diff}ms`)
+  // const final = performance.now()
+  // const diff = final - initial
 
   return (
     <>
