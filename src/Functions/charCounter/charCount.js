@@ -1,5 +1,3 @@
-import { timeFormat } from "../../helpers/timeformat"
-
 export function resultCountLetter(episodes, locations, characters) {
   const initial = performance.now()
   const result = []
@@ -14,9 +12,8 @@ export function resultCountLetter(episodes, locations, characters) {
 
   const final = performance.now()
   const time = final - initial
-  const inFormat = timeFormat(time)
 
-  localStorage.setItem("duration_char_counter", inFormat)
+  localStorage.setItem("duration_char_counter", time)
 
   return result
 }
