@@ -21,9 +21,10 @@ export function resultCountLetter(episodes, locations, characters) {
 function toPush(dataArray, resource, prop, letter) {
   return {char: letter, count: countLetter(dataArray, prop, letter), resource: resource}
 }
+
 // countLetter function return the total number of times a letter appears
 // in a prop of an object which is a element of an array
-function countLetter(dataArray, prop, letter) {
+export function countLetter(dataArray, prop, letter) {
   const reg = new RegExp(`${letter}`, "g")
 
   return dataArray?.map(object => object[prop].toLowerCase().match(reg)?.length || 0)
