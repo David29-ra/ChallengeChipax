@@ -25,12 +25,14 @@ test('should render all components', () => {
   expect(footerpart).toBeInTheDocument();
 })
 
-test('should count tag p exist on mainpage', () => {
+test('should count tag p and a exist on mainpage', () => {
   ReactDOM.render(<Mainpage />, divroot);
 
   const paragraphs = document.querySelectorAll("p");
+  const links = document.querySelectorAll("a");
 
-  expect(paragraphs.length).toBe(2);
+  expect(paragraphs.length).toBe(1);
+  expect(links.length).toBe(1);
 })
 
 test('should valid Title and subtitle and footer', () => {
@@ -38,11 +40,11 @@ test('should valid Title and subtitle and footer', () => {
 
   const title = document.querySelector("header h1");
   const subtitle = document.querySelector("header p");
-  const footermessage = document.querySelector("footer p");
+  const footermessage = document.querySelector("footer a");
 
   expect(title.textContent).toBe("Rick and Morty Challenge");
   expect(subtitle.textContent).toBe("Made by David Rivas");
 
-  expect(footermessage.textContent).toBe("Made by Monito Inc.");
+  expect(footermessage.textContent).toBe("github repository");
 })
 

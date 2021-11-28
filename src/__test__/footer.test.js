@@ -14,23 +14,23 @@ afterEach(() => {
   divroot = null;
 })
 
-test("component Footer render without name prop", () => {
+test("component Footer render", () => {
   ReactDOM.render(<Footer />, divroot);
 
-  const message = document.querySelector("p");
-  expect(message.textContent).toBe("Made by ");
+  const message = document.querySelector("a");
+  expect(message.textContent).toBe("github repository");
 })
 
-test("component Footer render with name prop", () => {
-  ReactDOM.render(<Footer name={"Monito"}/>, divroot);
+test("component Footer render check with screen", () => {
+  ReactDOM.render(<Footer />, divroot);
 
-  const madeby = screen.getByText("Made by Monito");
+  const madeby = screen.getByText("github repository");
   expect(madeby).toBeInTheDocument();
 })
 
-test("component Footer, its p tag with class footer", () => {
+test("component Footer, its a tag with class footer-link", () => {
   ReactDOM.render(<Footer />, divroot);
 
-  const message = document.querySelector("p");
-  expect(message.className).toBe("footer");
+  const message = document.querySelector("a");
+  expect(message.className).toBe("footer-link");
 })
