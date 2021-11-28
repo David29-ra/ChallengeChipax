@@ -94,3 +94,8 @@ $ npm start
 ```powershell
 $ npm test
 ```
+
+<br/>
+<br/>
+
+*Made by Monito Inc. 🙊*
