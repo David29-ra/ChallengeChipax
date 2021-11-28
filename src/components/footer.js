@@ -1,8 +1,8 @@
 // Footer component, return footer with nickname of user
-export function Footer({name}) {
+export function Footer() {
   return (
     <footer>
-      <p className="footer">Made by {name}</p>
+      <a href="https://github.com/David29-ra/ChallengeChipax" className="footer-link">github repository</a>
     </footer>
   )
 }

@@ -8,7 +8,7 @@ export function Mainpage() {
     <>
       <Header title="Rick and Morty Challenge" name="David Rivas"/>
       <Results />
-      <Footer name="Monito Inc."/>
+      <Footer />
     </>
   )
 }

@@ -41,5 +41,5 @@ test("component Header, its p tag with class footer and h1 tag with class title"
   const subtitle = document.querySelector("p");
 
   expect(title.className).toBe("title");
-  expect(subtitle.className).toBe("footer");
+  expect(subtitle.className).toBe("subtitle");
 })  
