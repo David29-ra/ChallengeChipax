@@ -1,3 +1,4 @@
+// THis function is used to format the time in formar Xs Yms 
 export function timeFormat(time) {
   if(typeof time !== 'string' && time >= 0) {
   const seconds = String(time/1000)

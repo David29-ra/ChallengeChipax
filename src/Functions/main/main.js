@@ -2,6 +2,8 @@ import { timeFormat } from "../../helpers/timeformat"
 import { resultCountLetter } from "../charCounter/charCount"
 import { resultsLocation } from "../locations/locations"
 
+
+// Main function return string json qith results of two exercises
 export function main(episodes, locations, characters) {
   const myjson = []
 
