@@ -1,7 +1,9 @@
+// This function is used to list all the locations of the characters who appear in each episode.
 export function resultsLocation(episodes, characters) {
   const initial = performance.now()
   const result = []
 
+  // this part is used to get the locations of the characters who appear in each episode.
   episodes?.forEach(episode => {
     const obj = {name: episode.name, episode: episode.episode, locations: []}
 
@@ -21,7 +23,7 @@ export function resultsLocation(episodes, characters) {
   return result
 }
 
-
-function uniqueElements(array) {
+// This function is used to get the unique elements of an array
+export function uniqueElements(array) {
   return [...new Set(array)]
 }

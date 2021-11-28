@@ -1,3 +1,6 @@
+// resultCount function return an array of objects, objects are the results of
+// counter the letters using the toPush function
+
 export function resultCountLetter(episodes, locations, characters) {
   const initial = performance.now()
   const result = []
@@ -18,6 +21,8 @@ export function resultCountLetter(episodes, locations, characters) {
   return result
 }
 
+// toPush fuction return an object which the results of count the letters using
+// the countLetter function
 function toPush(dataArray, resource, prop, letter) {
   return {char: letter, count: countLetter(dataArray, prop, letter), resource: resource}
 }
