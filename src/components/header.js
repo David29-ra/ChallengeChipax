@@ -1,3 +1,4 @@
+// Header component, return header with title and subtitle
 export function Header({title, name}) {
   return (
     <header>

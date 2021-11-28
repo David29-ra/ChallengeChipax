@@ -5,10 +5,12 @@ import { getData } from '../services/indexdata';
 export function Results() {  
   // const initial = performance.now()
 
+  // use state to store the data
   const [characters, setCharacters] = useState(JSON.parse(localStorage.getItem("characters")) || []);
   const [locations, setLocations] = useState(JSON.parse(localStorage.getItem("locations")) || []);
   const [episodes, setEpisodes] = useState(JSON.parse(localStorage.getItem("episodes")) || []);
 
+  // use effect to fetch the data
   useEffect(() => {
     const savedata = async () => {
       const chardata = await getData("character", 826)
